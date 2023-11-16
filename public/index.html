@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DripHUB</title>
+  <link href="styles.css" rel="stylesheet">
+  <script src="index.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar">
+    <img src="barbarian.jpg" alt="placeholder">
+    <button class="nav-item" id="home-btn">DripHUB</button>
+    <div id="header-btns">
+      <button class="nav-item" id="navbar-login">Log In</button>
+      <button class="nav-item" id="navbar-signup">Sign Up</button>
+      <button class="nav-item hidden" id="navbar-profile">Profile</button>
+      <button class="nav-item hidden" id="navbar-logout">Log Out</button>
+    </div>
+  </div>
+  <h1>Welcome to DripHUB!</h1>
+  <p id="account-status"></p>
+  <article id="page-data">
+    <section id="login-view">
+      <h1>Log into DripHUB</h1>
+        <form id="login-form">
+          <label for="user-login">Username</label>
+          <input id="user-login" type="text" class="username" name="username">
+          <label for="user-password">Password</label>
+          <input id="user-password" type="password" class="password" name="password">
+          <button id="login-submit">Log In</button>
+        </form>
+        <button id="signup-btn">Don't have an account, sign up!</button>
+      </section>
+
+    <section id="signup-view" class="hidden">
+      <h1>Create a User</h1>
+      <form id="signup-form">
+        <label for="signup-email">Email</label>
+        <input id="signup-email" type="text" class="email" name="email">
+        <label for="signup-username">Username</label>
+        <input id="signup-username" type="text" class="username" name="username">
+        <label for="signup-password">Password</label>
+        <input id="signup-password" type="password" class="password" name="password">
+        <button id="signup-submit">Create User</button>
+      </form>
+      <button id="login-btn">Already have an account? Log in!</button>
+    </section>
+
+    <section id="clothing-listings" class="hidden">
+      <form id="search-form">
+        <label for="listings-search">Search Listings!</label>
+        <input id="listings-search" type="text" name="listings-search" value="">
+        <label for="listings-min-price">Price Min:</label>
+        <input id="listings-min-price" type="number" name="min-price" value="0">
+        <label for="listings-max-price">Price Max:</label>
+        <input id="listings-max-price" type="number" name="max-price" value="999">
+        <label for="clothing-type-search">Clothing Type:</label>
+        <select id="clothing-type-search" name="clothing-type" required>
+          <option value="">Select a type</option>
+          <option value="jacket">Jacket</option>
+          <option value="pants">Pants</option>
+          <option value="shirt">Shirt</option>
+          <option value="dress">Dress</option>
+          <option value="skirt">Skirt</option>
+          <option value="blouse">Blouse</option>
+          <option value="sweater">Sweater</option>
+          <option value="t-shirt">T-Shirt</option>
+          <option value="jeans">Jeans</option>
+          <option value="shorts">Shorts</option>
+          <option value="coat">Coat</option>
+          <option value="other">Other</option>
+        </select>
+        <button id="search-submit">Search</button>
+      </form>
+      <h1>Check out our listings!</h1>
+      <button id="toggle-view-btn">Toggle View</button>
+      <div id="listing-box" class="product-grid horiz-center">
+      </div>
+    </section>
+
+    <section id="specific-listing" class="hidden">
+    </section>
+    <div id="confirm-transaction" class="hidden">
+      <p>Are you sure you want to make this purchase?</p>
+      <button id="cancel-button">Cancel</button>
+      <button id="confirm-button">Confirm</button>
+    </div>
+    <section id="profile-view" class="hidden">
+      <h1>Profile</h1>
+      <div id="not-logged-in">
+        <p>Seems you aren't logged in...</p>
+      </div>
+      <h2>Current Listings</h2>
+      <div id="user-listings">
+
+      </div>
+      <button id="create-listing-btn">Add Listing</button>
+      <h2>Previous Transactions</h2>
+      <div id="user-transactions">
+      </div>
+    </section>
+
+    <section id="create-listing" class="hidden">
+      <h1>Create Listing</h1>
+      <form id="create-listing-form">
+        <label for="item-name">Item Name:</label>
+        <input type="text" id="item-name" name="item-name" required>
+        <label for="item-link">Image Link:</label>
+        <input type="url" id="item-link" name="item-link" required>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" min="0" step="0.01" required>
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" min="1" step="1" required>
+        <label for="clothing-type">Clothing Type:</label>
+        <select id="clothing-type" name="clothing-type" required>
+          <option value="">Select a type</option>
+          <option value="jacket">Jacket</option>
+          <option value="pants">Pants</option>
+          <option value="shirt">Shirt</option>
+          <option value="dress">Dress</option>
+          <option value="skirt">Skirt</option>
+          <option value="blouse">Blouse</option>
+          <option value="sweater">Sweater</option>
+          <option value="t-shirt">T-Shirt</option>
+          <option value="jeans">Jeans</option>
+          <option value="shorts">Shorts</option>
+          <option value="coat">Coat</option>
+          <option value="other">Other</option>
+        </select>
+        <button id="create-btn" type="submit">Create</button>
+      </form>
+    </section>
+
+    <p id="error"></p>
+    <p id="feedback"></p>
+  </article>
+</body>
+</html>
